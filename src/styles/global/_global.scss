@@ -1,0 +1,249 @@
+@charset "utf-8";
+
+@use 'vars' as *;
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('../fonts/apple/AppleGaramond-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('../fonts/apple/AppleGaramond-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('../fonts/apple/AppleGaramond.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('../fonts/apple/AppleGaramond-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helvetica/HelveticaNeueLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helvetica/HelveticaNeueLightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helvetica/HelveticaNeueRoman.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helvetica/HelveticaNeueItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helvetica/HelveticaNeueMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+button,
+input,
+select,
+textarea {
+    font: $mainFont;
+}
+
+main {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+*:after,
+*:before,
+body,
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+// @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+//     only screen and (min--moz-device-pixel-ratio: 1.5),
+//     only screen and (-o-min-device-pixel-ratio: 200 / 100),
+//     only screen and (min-device-pixel-ratio: 1.5) {
+//     .dpiTest {
+//         width: 20px;
+//     }
+// }
+
+html {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 280px;
+    width: 100%;
+}
+
+body,
+body * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+    background-color: $mainBgColor;
+    background-attachment: fixed;
+}
+
+.locationsPage,
+.locationsPage body {
+    background-color: #5c4d3e;
+    color: #fff;
+}
+
+.contactsPage,
+.contactsPage body {
+    background-color: #b59e7e;
+    color: #fff;
+}
+
+.experiencePage,
+.experiencePage body {
+    background-color: #5a583f;
+    color: #fff;
+}
+
+body {
+    font: $mainFont;
+    color: $mainColor;
+    min-height: 100vh;
+    letter-spacing: 1%;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    overflow: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
+    &.indexPage,
+    &.lightBg {
+        color: $secondColor;
+    }
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+button,
+a,
+img {
+    outline: none;
+}
+
+// /* width */
+// ::-webkit-scrollbar {
+//     width: 8px;
+//     background: #e3e3e3;
+//     //border: solid 1px transparent;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//     //border: solid 1px #fff;
+//     // border-width: 0 1px;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//     background: #8c8e98;
+//     cursor: pointer;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #f5222d;
+// }
+
+.link_und {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    vertical-align: bottom;
+
+    &:before {
+        //&:after {
+        position: absolute;
+        left: 0;
+        // width: 100%;
+        width: 0%;
+        bottom: 0;
+        height: 1px;
+        margin-left: 0;
+        content: '';
+        background: currentColor;
+        transition: width 0.5s ease-out;
+    }
+
+    &:hover:before {
+        // left: -100%;
+        // transition: margin-left 0.5s;
+        // margin-left: 100%;
+        width: 100%;
+    }
+
+    &.active:before {
+        width: 100%;
+    }
+
+    &--wide:before {
+        width: 100%;
+    }
+
+    &--wide:hover:before {
+        left: -100%;
+        transition: margin-left 0.5s;
+        margin-left: 100%;
+        width: 100%;
+    }
+}

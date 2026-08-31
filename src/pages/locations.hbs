@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="locationsPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>locations</title>
+    <link rel="stylesheet" href="/src/styles/style.scss"> 
+    {{> loading_css }}
+</head>
+<body class="loading-inner ">
+    <div class="inner-loader"></div>
+
+    {{> sprite }}
+
+    {{> loader }}
+
+    {{> header class="" }}
+
+    <main class="main">
+      {{> locations }}
+    </main>
+ 
+    {{> footer_info }}
+
+    <script defer type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>
