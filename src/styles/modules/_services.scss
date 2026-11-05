@@ -193,6 +193,20 @@
 
             a {
                 color: inherit;
+
+                &[href='https://clients.mangomint.com/gift-cards/projectessenceinc'] {
+                    text-align: center;
+                    cursor: pointer;
+                    height: 34px;
+                    display: inline-block;
+                    background: #5a583f;
+                    border: none;
+                    color:#fff;
+                    border-radius: 2px;
+                    padding: 9px 40px;
+                    position: relative;
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -223,15 +237,27 @@
         }
 
         &_info {
-            font-size: 12px;
+            font-size: 14px;
         }
 
         &_inner {
             overflow: hidden;
+
+            & > *:first-child {
+                margin-top: 0;
+            }
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media all and (min-width: 768px) {
+            &_header ~  &_content {
+                padding: 0 0 0 190px;
+            }
         }
 
         &_content {
-            padding: 0 0 0 190px;
             display: grid;
             font-size: 14px;
             grid-template-rows: 0fr;
@@ -366,7 +392,24 @@
 
         &.active &_content {
             grid-template-rows: 1fr;
-            padding-top: 35px;
+        }
+
+        &_content &_inner {
+            @media all and (min-width: 768px) {
+                margin: 0 auto;
+            }
+        }
+
+        &.active &_header ~ &_content &_inner {
+            @media all and (min-width: 768px) {
+                margin: 0;
+            }
+        }
+
+        &.active &_header ~ &_content {
+           @media all and (min-width: 768px) {
+               padding-top: 35px;
+           }
         }
 
         &_table {
@@ -390,12 +433,19 @@
                 }
             }
 
+            //tr td:first-child {
+            //    text-transform: lowercase;
+            //
+            //    &:first-letter {
+            //        text-transform: uppercase;
+            //    }
+            //}
             td {
                 padding: 10px 0 0 0;
                 font-weight: 500;
-                line-height: 16px;
+                line-height: 14px;
                 letter-spacing: 0.01em;
-                text-transform: capitalize;
+                //text-transform: capitalize;
 
                 & + td {
                     padding-left: 30px;

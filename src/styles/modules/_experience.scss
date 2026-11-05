@@ -50,6 +50,7 @@
     }
 
     &__media {
+
         &_el {
         }
 
@@ -81,6 +82,8 @@
 
     &__content &__media {
         display: block;
+        height: 247px;
+        width: 166px;
     }
 
     &__content_media {

@@ -101,7 +101,13 @@ let services = {
         navList.forEach(function (el) {
             el.addEventListener('click', function (e) {
                 e.preventDefault();
+                let curEl = this.closest('.services__panel').querySelector('.services__el.current');
+                if(curEl) curEl.classList.remove('current');
                 this.closest('.services__el').classList.toggle('active');
+                this.closest('.services__el').classList.add('current');
+                let anotherActive = this.closest('.services__panel').querySelector('.services__el.active:not(.current)');
+                if(anotherActive) anotherActive.classList.remove("active");
+                this.closest('.services__el').classList.remove('current');
             });
         });
     },
@@ -195,6 +201,10 @@ let faq = {
             el.addEventListener('click', function (e) {
                 e.preventDefault();
                 this.closest('.faq__question').classList.toggle('active');
+                this.closest('.faq__question').classList.add('current');
+                let anotherActive = this.closest('.faq__panel_content').querySelector('.faq__question.active:not(.current)');
+                if(anotherActive) anotherActive.classList.remove("active");
+                this.closest('.faq__question').classList.remove('current');
             });
         });
     },
@@ -284,6 +294,7 @@ let experience = {
             self.mediaSliders.push(
                 new Swiper(el, {
                     spaceBetween: 10,
+                    slidesPerView: 1
                 })
             );
         });
@@ -315,18 +326,17 @@ let livetime = {
         );
     },
     refresh: function () {
-        let time = this.format
-            .formatToParts(new Date())
-            .filter(function (part) {
-                return part.type !== 'dayPeriod' && part.type !== 'literal';
-            })
-            .map(function (part) {
-                return part.value;
-            })
-            .join(':');
+        let parts = this.format.formatToParts(new Date());
+
+        function get(type) {
+            let part = parts.find(function (p) { return p.type === type; });
+            return part ? part.value : '';
+        }
+
+        let time = get('hour') + ':' + get('minute') + ' ' + get('dayPeriod'); // "3:45 PM"
 
         document.querySelectorAll('.js__livetime').forEach(function (el) {
-            el.textContent = time;
+            el.textContent = time.toLowerCase();
         });
     },
 };

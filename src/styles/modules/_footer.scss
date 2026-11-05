@@ -12,9 +12,10 @@
     color: #fff;
 
     &__logo {
-        width: 157px;
-        height: 59px;
-
+        //width: 157px;
+        //height: 59px;
+        width: 93px;
+        height: 42px;
         // @media all and (max-width: 768px) {
         //     width: 120px;
         //     height: 45px;
@@ -89,7 +90,7 @@
     &__nav {
         width: 100%;
         display: flex;
-        align-items: center;
+        align-items: start;
         justify-content: space-between;
     }
 
