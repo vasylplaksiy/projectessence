@@ -203,6 +203,22 @@ img {
 //     background: #f5222d;
 // }
 
+.btn {
+    text-align: center;
+    cursor: pointer;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #5a583f;
+    border: none;
+    color:#fff;
+    border-radius: 2px;
+    padding: 0 10px ;
+    position: relative;
+    text-decoration: none;
+}
+
 .link_und {
     display: inline-block;
     position: relative;

@@ -1,0 +1,48 @@
+
+@use '../global/vars' as *;
+@use '../global/global' as *;
+
+.form {
+  max-width: 400px;
+  &__row {
+    margin: 8px 0 0 0;
+
+    label {
+      color: rgb(243, 240, 232);
+      font-size: 14px;
+      line-height: 14px;
+      margin: 0 0 2px 0;
+    }
+
+    input, textarea {
+      display: flex;
+      width: 100%;
+      border: none;
+      border-radius: 2px;
+      height: 36px;
+      background-color: rgb(243, 240, 232);
+      transition: all 0.3s;
+      outline: none;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 16px;
+
+      &:focus {
+        background: #fff;
+      }
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+  }
+
+  button[type=submit] {
+    @extend .btn;
+    background-color: rgb(243, 240, 232);
+    color: rgb(92, 77, 62);
+    min-width: 140px;
+    margin: 20px 0 0 0;
+  }
+}

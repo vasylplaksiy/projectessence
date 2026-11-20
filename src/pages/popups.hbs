@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popups</title>
+    <link rel="stylesheet" href="/src/styles/style.scss">
+    {{> loading_css }}
+</head>
+<body class="loading-inner">
+<div class="inner-loader"></div>
+
+{{> sprite }}
+
+{{> loader }}
+
+{{> header class="" }}
+
+<main class="main">
+
+    <article class="article">
+        <ol>
+            <li>
+                <button type="button" class="btn showModal" data-modal=".modalText">Text</button>
+            </li>
+            <li>
+                <button type="button" class="btn showModal" data-modal=".modalPhotoText">Photo + text</button>
+            </li>
+          <!--  <li>
+                <button type="button" class="btn showModal" data-modal=".modalPhoto">Photo</button>
+            </li>-->
+            <li>
+                <button type="button" class="btn showModal" data-modal=".modalForm">Form</button>
+            </li>
+            <li>
+                <button type="button" class="btn showModal" data-modal=".modalPhotoForm">Photo + Form</button>
+            </li>
+        </ol>
+    </article>
+
+
+    <div class="modal modal--mid  modalText">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <span class="modal__close"></span>
+            <div class="modal__column">
+                <div class="modal__header">
+                    <div class="modal__toptitle">new client offer</div>
+                    <div class="modal__title">15% off</div>
+                    <div class="modal__subtitle">your first ritual</div>
+                </div>
+                <div class="modal__content">
+                    <p>your first ritual Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam cum eos
+                        iusto, laboriosam nemo. Architecto debitis dolor eligendi harum laborum libero, nobis nulla
+                        officia quaerat, qui quis rem, totam.</p>
+
+                    <a href="#" class="btn">Book your first visit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--  data-time сюда  время в милисекундах из админки для попапа  -->
+<!--  клас autoOpenPopup нужно добавить в разметку, именно его откроет скрипт -->
+    <div class="modal modalPhotoText autoOpenPopup" data-time="2000">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <span class="modal__close"></span>
+<!-- если есть фото то выводим блок, если есть ссылка то делаем блок ссылкой, если нето то просто div           -->
+            <a href="#" class="modal__column modal__photo">
+                <img src="img/contacts/contacts_1.jpg" alt="" loading="lazy"/>
+            </a>
+<!--            Тут все просто - если в админке есть данные выводи блок и текст внутри, если нет то без разметки -->
+            <div class="modal__column">
+                <div class="modal__header">
+                    <div class="modal__toptitle">new client offer</div>
+                    <div class="modal__title">15% off</div>
+                    <div class="modal__subtitle">your first ritual</div>
+                </div>
+                <div class="modal__content">
+                    <a href="#" class="btn">Book your first visit</a>
+                    <p>your first ritual Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam cum eos
+                        iusto, laboriosam nemo. Architecto debitis dolor eligendi harum laborum libero, nobis nulla
+                        officia quaerat, qui quis rem, totam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modalPhoto">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <span class="modal__close"></span>
+            <a href="#" class="modal__column modal__photo modal__photo--asis">
+                <img src="img/locations/dupont/3.jpg" alt="" loading="lazy"/>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="modal modalPhotoForm">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <span class="modal__close"></span>
+            <a href="#" class="modal__column modal__photo">
+                <img src="img/contacts/contacts_1.jpg" alt="" loading="lazy"/>
+            </a>
+            <div class="modal__column">
+                <div class="modal__header">
+                    <div class="modal__toptitle">new client offer</div>
+                    <div class="modal__title">15% off</div>
+                    <div class="modal__subtitle">your first ritual</div>
+                </div>
+
+                <div class="modal__content">
+
+                    <form class="form" action="">
+                        <p>your first ritual </p>
+
+                        <div class="form__row">
+                            <label for="form1_name">Your Name</label>
+                            <input type="text" id="form1_name" placeholder="">
+                        </div>
+                        <div class="form__row">
+                            <label for="form1_email">Your Email</label>
+                            <input type="email" id="form1_name" placeholder="">
+                        </div>
+                        <div class="form__row">
+                            <label for="form1_phone">Your Phone Number</label>
+                            <input type="tel" id="form1_phone" placeholder="">
+                        </div>
+                        <div class="form__row">
+                            <label for="form1_phone">Your Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <button type="submit">Send</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal--mid  modalForm">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <span class="modal__close"></span>
+            <div class="modal__column">
+                <div class="modal__header">
+                    <div class="modal__toptitle">new client offer</div>
+                    <div class="modal__title">15% off</div>
+                    <div class="modal__subtitle">your first ritual</div>
+                </div>
+
+                <div class="modal__content">
+
+                    <form class="form" action="">
+                        <p>your first ritual </p>
+
+                        <div class="form__row">
+                            <label for="form1_name">Your Name</label>
+                            <input type="text" id="form1_name" placeholder="" aria-placeholder="John Doe">
+                        </div>
+                        <div class="form__row">
+                            <label for="form1_email">Your Email</label>
+                            <input type="email" id="form1_name" placeholder="">
+                        </div>
+                        <div class="form__row">
+                            <label for="form1_phone">Your Phone Number</label>
+                            <input type="tel" id="form1_phone" placeholder="">
+                        </div>
+                        <div class="form__row">
+                            <label for="form1_phone">Your Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <button type="submit">Send</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{{> footer_full }}
+
+<!--<script defer type="module"  src="/src/scripts/popper.min.js"></script>-->
+<!--<script defer type="module"  src="/src/scripts/tippy-bundle.umd.min.js"></script>-->
+<script defer type="module"  src="/src/scripts/main.js"></script>
+<script defer type="module"  src="/src/scripts/modal.js"></script>
+
+</body>
+</html>
